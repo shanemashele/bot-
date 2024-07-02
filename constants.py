@@ -1,8 +1,14 @@
 from ai21 import AI21Client
 import streamlit as st
 
-client = AI21Client(api_key=st.secrets['api-keys']['ai21-api-key'])
+api_key = "VkFkTvy0NxSmPYKJ9wNOWCqfAGeLqd9H"
 
+# Check if the API key was assigned
+if not api_key:
+    raise ValueError("API key is missing")
+
+# Initialize the AI21 client with the API key
+client = AI21Client(api_key=api_key)
 DEFAULT_MODEL = 'j2-ultra'
 
 SUMMARIZATION_URL = "https://www.ai21.com/blog/announcing-ai21-studio-and-jurassic-1"
